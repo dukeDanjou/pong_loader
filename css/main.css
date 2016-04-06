@@ -1,0 +1,85 @@
+head {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.tile {
+    width: 300px;
+    height: 300px;
+    border: 5px solid grey;
+    background-color: black;
+    position: relative;
+    top: 50%;
+    margin: -150px auto 0 auto;
+/*
+    perspective: 1000px;
+    animation:animateTile 5s linear infinite;
+*/
+}
+
+.middle {
+    border-right: 5px dotted grey;
+    height: 100%;
+    margin: auto;
+    width: 5px;
+    box-sizing: border-box;
+}
+
+.player1 {
+    left: 10px;
+    top: 10px;
+    animation: animatePlayer1 2s linear 2s infinite alternate;
+}
+
+.player {
+    width: 5px;
+    height: 50px;
+    position: absolute;
+    border-right: 5px solid grey;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.player2 {
+    right:10px;
+    bottom: 10px;
+    animation: animatePlayer2 2s linear 2s infinite alternate;
+}
+
+.ball {
+    width: 10px;
+    height: 10px;
+    left: 16px;
+    top: 20px;
+    border-right: 10px solid grey; 
+    box-sizing: border-box;
+    position: absolute;
+    animation: animateBall 2s linear 2s infinite alternate;
+}
+
+@keyframes animatePlayer1{
+    from { top: 10px;}
+    to { top: 200px}
+}
+
+@keyframes animatePlayer2{
+    from { bottom: 10px;}
+    to { bottom: 80px}
+}
+
+@keyframes animateBall{
+    0% { top: 10px; left: 16px; }
+    100% { top: 200px; left: 280px;}
+}
+
+@keyframes animateTile{
+    from {transform: rotateY(0deg)}
+    to{transform: rotateY(360deg)}
+}
